@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>All Added User list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">list</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button type="button" routerLink="/home">Add User</ion-button>
+  <ion-button type="button" routerLink="/home">Back to Homepage</ion-button>
+  
+  <div>
+      <!-- get data from userdata -->
+     
+      <ion-card *ngFor="let item of userlist;let i = index">
+        <div *ngIf="item">
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Username</ion-label>
+          <ion-text slot="end">{{item.username}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Gender</ion-label>
+          <ion-text slot="end">{{item.gender}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Mother Name</ion-label>
+          <ion-text slot="end">{{item.mothername}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Father Name</ion-label>
+          <ion-text slot="end">{{item.fathername}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Mobile Number</ion-label>
+          <ion-text slot="end">{{item.mobilenumber}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Email</ion-label>
+          <ion-text slot="end">{{item.email}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Address</ion-label>
+          <ion-text slot="end">{{item.address}}</ion-text>
+        </ion-item>
+        <ion-item class="info-item ion-no-padding" lines="none" detail="false">
+          <ion-label>Password</ion-label>
+          <ion-text slot="end">{{item.password}}</ion-text>
+        </ion-item>
+        <ion-button type="button" (click)="deleteuserdata(i)">Delete User</ion-button>
+        <ion-button type="button" (click)="goToBin(item,i)" >Update User</ion-button>
+      </div>
+          <!-- <p>{{item.username}} </p>
+          <h1>{{item.email}}</h1> -->
+     
+      </ion-card>
+  </div>
+
+</ion-content>

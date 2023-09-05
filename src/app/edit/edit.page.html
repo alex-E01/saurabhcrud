@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Crud Application
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><h1>Update User</h1></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-input type="text" [(ngModel)]="username" placeholder="Enter Your Name"/>
+      <ion-radio-group [(ngModel)]="gender">
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio value="male"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+        <!-- Add more options as needed -->
+      </ion-radio-group>
+      <ion-input type="text" [(ngModel)]="mothername" placeholder="Enter Your Mother Name"/>
+      <ion-input type="text" [(ngModel)]="fathername" placeholder="Enter Your Father Name"/>
+      <ion-input type="number" [(ngModel)]="mobilenumber" placeholder="Enter Your Mobilenumber"/>
+      <ion-input type="email" [(ngModel)]="email" placeholder="Enter Your Email"/>
+      <ion-input type="address" [(ngModel)]="address" placeholder="Enter Your address"/>
+      <ion-input type="password" [(ngModel)]="Password" placeholder="Enter Your Password"/>
+      <ion-button type="button" (click)="saveData()">Update</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="button" routerLink="/home">Back Home Page</ion-button>
+</ion-content>
